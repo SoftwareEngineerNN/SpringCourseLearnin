@@ -10,7 +10,10 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="com.yusuf.springcourse.Alternative">
+          class="com.yusuf.springcourse.Alternative"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getAlternative">
     </bean>
 
     <bean id="musicBean2"
@@ -22,7 +25,10 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="com.yusuf.springcourse.MusicPlayer">
+          class="com.yusuf.springcourse.MusicPlayer"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+            scope="prototype">
         <property name="musicList"  >
         <list>
             <ref bean="musicBean"/>

@@ -32,6 +32,14 @@ public class MusicPlayer {
         this.musicList = musicList;
     }
 
+    public void doMyInit() {
+        System.out.println("Get started initialization");
+    }
+
+    public void doMyDestroy() {
+        System.out.println("Destroying bean");
+    }
+
     public void playMusicList() {
         for (int i = 0; i < musicList.size() ; i++) {
             System.out.println(musicList.get(i).getSong());
