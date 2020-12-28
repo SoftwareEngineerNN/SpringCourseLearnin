@@ -9,13 +9,13 @@ public class TestSpring {
         );
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
-        musicPlayer.playMusicList();
-        MusicPlayer musicPlayer2 = context.getBean("musicPlayer",MusicPlayer.class);
-        musicPlayer2.playMusicList();
-        Alternative alternative = context.getBean("musicBean", Alternative.class);
-        alternative.getSong();
-        System.out.println(alternative);
-
+//        musicPlayer.playMusicList();
+//        MusicPlayer musicPlayer2 = context.getBean("musicPlayer",MusicPlayer.class);
+//        musicPlayer2.playMusicList();
+//        Alternative alternative = context.getBean("musicBean", Alternative.class);
+//        alternative.getSong();
+//        System.out.println(alternative);
+        musicPlayer.playMusic(Genre.ALTERNATIVE);
 //        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
 //        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
 //
@@ -33,6 +33,8 @@ public class TestSpring {
 //        System.out.println(firstMusicPlayer.getVolume());
 //        System.out.println(secondMusicPlayer.getVolume());
 
+        System.out.println(musicPlayer.getVolume());
+        System.out.println(musicPlayer.getName());
         context.close();
     }
 }
